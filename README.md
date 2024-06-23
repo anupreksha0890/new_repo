@@ -31,9 +31,22 @@
 - IDE/Tool : Spring Tool Suite 4 (Eclipse)
 
 
+## Installation (with Docker) :
 
+Make sure you have Docker and Docker Compose installed, that the Docker daemon is running, and that port 80 is open, then execute:
 
-## Installation :
+    docker-compose up -d
+
+After a few minutes, when the containers are completely started, you can add a sample Admin user with this command:
+
+    docker exec my-mysql  mysql -u root -proot  -e "insert into businessproject.admin (admin_email, admin_name, admin_number, admin_password) VALUES ('admin@mail.com', 'Admin', '123', 'admin');"
+
+Then go to the `http://server_ip/home` and login with this credentials:
+
+    user: admin@mail.com
+    pass: admin
+
+## Installation (without Docker):
 
 1. Clone the repository : $ git clone https://github.com/SuhasKamate/Business_Management_Project.git <br>
 

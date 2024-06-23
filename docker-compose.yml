@@ -1,0 +1,29 @@
+name: bizmgmtapp
+
+services:
+  # Java service
+  java:
+    build:
+      context: .
+      dockerfile: DockerfileJAVA
+    container_name: bizmgmtapp
+    ports:
+      - "80:2330"
+    depends_on:
+      - my-mysql
+
+  # MySQL service
+  my-mysql:
+    build:
+      context: .
+      dockerfile: DockerfileMysql
+    container_name: my-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: businessproject
+      MYSQL_USER: bizmgmtuser
+      MYSQL_PASSWORD: bizmgmtpass
+    volumes:
+      - /mysqldata:/var/lib/mysql
