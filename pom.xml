@@ -13,6 +13,7 @@
 	<artifactId>BusinessProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>BusinessProject</name>
+	<packaging>war</packaging>
 	<description>Building Business related project using spring boot</description>
 	<properties>
 		<java.version>17</java.version>
